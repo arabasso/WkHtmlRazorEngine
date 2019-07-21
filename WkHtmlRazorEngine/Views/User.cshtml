@@ -1,0 +1,46 @@
+﻿@inherits RazorEngine.Templating.TemplateBase<IEnumerable<WkHtmlRazorEngine.Models.UserModel>>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>WkHtmlRazorEngine</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12pt;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table tr th {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption><h1>Users</h1></caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Login</th>
+                <th>E-mail</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var user in @Model)
+            {
+                <tr>
+                    <td>@user.Name</td>
+                    <td>@user.Login</td>
+                    <td>@user.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
